@@ -7,6 +7,9 @@ window.onload = () => {
     searchButton.addEventListener('click', handleSearchEvent);
   }
   
+ const url = 'https://api.exchangeratesapi.io/v1/'; 
+
+
   const handleSearchEvent = () => {
     const currency = document.querySelector('#currency-input').value;
     const currencyUpperCased = currency.toUpperCase();
@@ -41,7 +44,7 @@ window.onload = () => {
   // }
   
   const fetchCurrencyAwaitAsync = async (currency) => {
-    const endpoint = `https://api.ratesapi.io/api/latest?base=${currency}`;
+    const endpoint = `${url}latest?base=${currency}`;
   
     try {
       const response = await fetch(endpoint);
